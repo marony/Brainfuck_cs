@@ -1,0 +1,26 @@
+﻿<Window x:Class="BrainFuck.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BrainFuck"
+        Title="BrainFuck" Height="426" Width="525" Background="#FF272A5D">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    <Grid Margin="0,0,0,0">
+        <StackPanel HorizontalAlignment="Left" Margin="10,10,0,10" Width="497">
+            <WrapPanel Height="100" Margin="0,0,0,0">
+                <Label Content="コード" Foreground="White"/>
+                <TextBox Text="{Binding Path=Code}" Height="100" TextWrapping="Wrap" Width="457"/>
+            </WrapPanel>
+            <WrapPanel Height="100" Margin="0,10,0,0">
+                <Label Content="入力" Foreground="White"/>
+                <TextBox Text="{Binding Path=Input}" Height="100" TextWrapping="Wrap" Width="457"/>
+            </WrapPanel>
+            <WrapPanel Height="100" Margin="0,10,0,0">
+                <Label Content="出力" Foreground="White"/>
+                <TextBox Text="{Binding Path=Output}" Height="100" TextWrapping="Wrap" Width="457"/>
+            </WrapPanel>
+            <Button Content="実行" Margin="0,10,0,0" Command="{Binding ExecuteCommand}" />
+        </StackPanel>
+    </Grid>
+</Window>

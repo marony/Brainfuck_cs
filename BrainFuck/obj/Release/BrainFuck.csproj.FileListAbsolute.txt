@@ -1,0 +1,16 @@
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck.csprojResolveAssemblyReference.cache
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\MainWindow.g.cs
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck_MarkupCompile.cache
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck_MarkupCompile.lref
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\bin\Release\BrainFuck.exe.config
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\bin\Release\BrainFuck.exe
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\bin\Release\BrainFuck.pdb
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\bin\Release\Newtonsoft.Json.dll
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\App.g.cs
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\MainWindow.baml
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck.g.resources
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck.Properties.Resources.resources
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck.csproj.GenerateResource.Cache
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck.exe
+C:\Users\tada\Dropbox\projects\_home\CSharp\BrainFuck\BrainFuck\obj\Release\BrainFuck.pdb

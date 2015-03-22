@@ -25,69 +25,64 @@ namespace BrainFuck
 			for (int i = 0; i < BUFFER_SIZE; ++i)
 				_buffer.Add((char)0);
 			var output = new StringBuilder();
+			var startLoop = new Action(() =>
+			{
+				if (_buffer[_ptr] == 0)
+				{
+					var nest = 0;
+					++_pc;
+					while (true)
+					{
+						if (code[_pc] == '[')
+							++nest;
+						else if (code[_pc] == ']')
+						{
+							if (nest == 0)
+								break;
+							--nest;
+						}
+						++_pc;
+					}
+				}
+			});
+			var endLoop = new Action(() =>
+			{
+				if (_buffer[_ptr] != 0)
+				{
+					var nest = 0;
+					--_pc;
+					while (true)
+					{
+						if (code[_pc] == ']')
+							++nest;
+						else if (code[_pc] == '[')
+						{
+							if (nest == 0)
+								break;
+							--nest;
+						}
+						--_pc;
+					}
+				}
+			});
+			var dicInst = new Dictionary<char, Action>()
+			{
+				{ '>', () => { ++_ptr; }},
+				{ '<', () => { --_ptr; }},
+				{ '+', () => { _buffer[_ptr] = ++_buffer[_ptr]; }},
+				{ '-', () => { _buffer[_ptr] = --_buffer[_ptr]; }},
+				{ '.', () => { output.Append(_buffer[_ptr]); }},
+				{ ',', () => { _buffer[_ptr] = input[_input++]; }},
+				{ '[', startLoop},
+				{ ']', endLoop}
+			};
 
 			while (_pc < code.Length)
 			{
 				var inst = code[_pc];
-				switch (inst)
-				{
-				case '>':
-					++_ptr;
-					break;
-				case '<':
-					--_ptr;
-					break;
-				case '+':
-					_buffer[_ptr] = ++_buffer[_ptr];
-					break;
-				case '-':
-					_buffer[_ptr] = --_buffer[_ptr];
-					break;
-				case '.':
-					output.Append(_buffer[_ptr]);
-					break;
-				case ',':
-					_buffer[_ptr] = input[_input++];
-					break;
-				case '[':
-					if (_buffer[_ptr] == 0)
-					{
-						var nest = 0;
-						++_pc;
-						while (true)
-						{
-							if (code[_pc] == '[')
-								++nest;
-							else if (code[_pc] == ']')
-							{
-								if (nest == 0)
-									break;
-								--nest;
-							}
-							++_pc;
-						}
-					}
-					break;
-				case ']':
-					if (_buffer[_ptr] != 0)
-					{
-						var nest = 0;
-						--_pc;
-						while (true)
-						{
-							if (code[_pc] == ']')
-								++nest;
-							else if (code[_pc] == '[')
-							{
-								if (nest == 0)
-									break;
-								--nest;
-							}
-							--_pc;
-						}
-					}
-					break;
-				}
+				Action action = null;
+				if (dicInst.TryGetValue(inst, out action))
+					action();
 				++_pc;
 			}
 
